@@ -1,0 +1,373 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.contenedor {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+#nav-mobile {
+    display: none;
+}
+
+/* HEADER */
+
+header {
+    width: 100%;
+    height: 450px;
+    background: url("img/fondo-header.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom center;
+    overflow: hidden;
+}
+
+nav {
+    padding: 60px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+nav>a {
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: 300;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+nav>a:hover {
+    text-decoration: underline;
+}
+
+
+section.titulo-header {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}
+
+section.titulo-header h1 {
+    margin-bottom: 20px;
+}
+
+/* MAIN */
+.negrita {
+    font-weight: 600;
+}
+
+div.lugar-turistico:nth-child(even) {
+    background-color: rgb(165, 191, 238, 0.8);
+}
+
+div.lugar-turistico:nth-child(odd) {
+    background-color: rgba(187, 188, 190, 0.8);
+}
+
+
+h2.titulo {
+    font-size: 2rem;
+    text-align: center;
+    padding: 20px 0;
+    color: #000;
+    text-decoration: underline;
+}
+
+div.info {
+    display: flex;
+}
+
+div.info_imagen {
+    margin: 0 auto;
+    width: 50%;
+    height: 100%;
+    padding: 5px;
+}
+
+div.info_imagen>img {
+    height: 350px;
+    width: 100%;
+}
+
+div.info_descrip {
+    width: 50%;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+div.info_descrip_item {
+    height: 100%;
+}
+
+h3.info_descrip-titulo {
+    font-size: 1.6rem;
+    text-decoration: underline;
+}
+
+h3.info_descrip-titulo:first-child {
+    margin-top: 5px;
+}
+
+.info_descrip-parrafo {
+    margin: 7px;
+}
+
+.info_descrip-parrafo {
+    color: #000;
+}
+
+a.info_descrip-parrafo:hover {
+    color: rebeccapurple;
+}
+
+.video {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #414141;
+    padding: 60px 0 30px 0;
+    margin: auto;
+    overflow: hidden;
+}
+
+.contenedor-footer {
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    margin: auto;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #ccc;
+}
+
+.content-foo {
+    text-align: center;
+}
+
+.content-foo h4 {
+    color: #fff;
+    border-bottom: 3px solid #af20d3;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.content-foo p {
+    color: #ccc;
+}
+
+.titulo-final {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0 0 0;
+    color: #9e9797;
+}
+
+
+
+/* BTN FLECHA */
+.box-flecha {
+    background-color: #db2626;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+.box-flecha i {
+    color: #fff;
+    font-size: 20px;
+    line-height: 50px;
+}
+
+/*MENU MOBILE */
+.control-menu {
+    background-color: transparent;
+    background-position: center center;
+    border: 1px solid #fff;
+    display: block;
+    float: right;
+    height: 40px;
+    margin-right: 1.3em;
+    width: 40px;
+}
+
+.control-menu a span {
+    display: inline-block;
+    height: 40px;
+    text-indent: -9999px;
+    width: 40px;
+}
+
+.control-menu .close {
+    background-image: url("img/close-menu.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+.control-menu .open {
+    background-image: url("img/open-menu.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.nav-items {
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.4s ease-in-out 0s, background-color 2s ease 0s;
+    /*El menú cambia su altura y su color de fondo mediante una transición suavizada al voover a su estado unicial*/
+}
+
+#nav-mobile:target .nav-items {
+    background: #f0f0f0 none repeat scroll 0 0;
+    height: 15.1em;
+    transition: height 0.4s ease-in-out 0s, background-color 0.9s ease 0s;
+    /*El menú cambia su altura y su color de fondo mediante una transición suavizada al abrirse*/
+}
+
+
+/*Al hacer clic sobre el enlace que abre el menú éste desaparece*/
+
+.close {
+    display: none;
+}
+
+#nav-mobile:target .open {
+    display: none;
+}
+
+/* Al hacer clic sobre el enlace que abre el menú aparece el enlace .close que previamente estaba oculto*/
+
+#nav-mobile:target .close {
+    display: block;
+}
+
+/*Estilos menu*/
+
+.nav-items > a {
+    display: block;
+}
+
+.nav-items a {
+    background-color: transparent;
+    border-top: 1px solid #3498db;
+    color: #3498db;
+    display: block;
+    height: 3em;
+    line-height: 3em;
+    margin: 0;
+    text-decoration: none;
+}
+.nav-items a:hover{
+    background-color: rgb(9, 147, 207,0.32);
+}
+
+
+.nav-items li:first-child a {
+    border-top: 2px solid transparent;
+}
+
+.nav-items li a span {
+    border-left: 3px solid;
+    height: 3.2em;
+    padding: 0.4em 0.5em;
+}
+
+@media screen and (max-width:750px) {
+
+    section.titulo-header {
+        margin-top: 10%;
+    }
+
+    div.info {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav {
+        text-align: center;
+        padding: 30px 0 0 0;
+    }
+
+    nav>a {
+        font-size: 1rem;
+        margin-right: 5px;
+    }
+
+    div.info_imagen {
+        width: 90%;
+
+    }
+
+    div.info_descrip {
+        width: 90%;
+
+    }
+
+    /* Footer */
+
+    .contenedor-footer {
+        flex-direction: column;
+        border: none;
+    }
+
+    .content-foo {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .content-foo h4 {
+        border: none;
+    }
+
+    .content-foo p {
+        color: #ccc;
+        border-bottom: 1px solid #af20d3;
+        padding-bottom: 20px;
+    }
+
+    .titulo-final {
+        font-size: 20px;
+    }
+}
+
+
+@media screen and (max-width:500px) {
+    #nav-full {
+        display: none;
+    }
+
+    #nav-mobile {
+        display: block;
+    }
+}
